@@ -89,3 +89,5 @@ in the folder `models/` you can find a pretrained model `FinalModel.hdf5`for 100
 ### Results 
 
 ![accuracy](./results/DQN/accuracy_final.PNG)
+<br />
+![reward average](./results/DQN/dgnreward.PNG)
