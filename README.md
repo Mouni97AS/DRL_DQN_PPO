@@ -94,9 +94,10 @@ in the folder `models/` you can find a pretrained model `FinalModel.hdf5`for 100
 <br />
 description of the code and the steps in the process for further information. Go to page 38 of the PDF folder and read section 5.
 
-####for testing the model we run the command:
+#### For testing the model we run the command:
 
 ```
 Python test.py
 ```
-the test result [here](https://drive.google.com/drive/folders/1MB5YD3kh4UlUqWMe7fTGqTp4uAJQIK_M)
+the test result: [Output_command](https://drive.google.com/file/d/1236lOgR6en0iUBRHgOF8gNQCZhxrZHpT/view?usp=sharing)
+[media_1](https://drive.google.com/file/d/10Pf8d4lsIToUAsdLxzxxKEu-uf150flx/view?usp=sharing)
