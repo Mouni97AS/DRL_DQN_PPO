@@ -8,4 +8,5 @@ The main objective of this thesis is to provide a comprehensive analysis of curr
 
 The implementation was written in Python 3.7 and TensorFlow 1.14 with Keras 2.2.4.
 [CALRA](https://github.com/carla-simulator/carla/releases) version 0.9.4
-The code configuration and setup Carla was done on my own PC using PyCharm
+The code configuration and setup Carla was done on my own PC using PyCharm the training process was carried out on a Linux which was running Ubuntu version 20.4 supported with GPU, the connection was done remotely by OpenVPN and PuTTY.
+5.2 DQN
