@@ -7,5 +7,5 @@ The main objective of this thesis is to provide a comprehensive analysis of curr
 ## DRL deep-Q-Network in CARLA 
 
 The implementation was written in Python 3.7 and TensorFlow 1.14 with Keras 2.2.4.
-[CALRA] (https://github.com/carla-simulator/carla/releases) version 0.9.4
+[CALRA](https://github.com/carla-simulator/carla/releases) version 0.9.4
 The code configuration and setup Carla was done on my own PC using PyCharm
