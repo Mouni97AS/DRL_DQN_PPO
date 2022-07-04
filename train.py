@@ -53,7 +53,7 @@ MODEL_NAME = "Xception"
 MEMORY_FRACTION = 0.4
 MIN_REWARD = -200
 
-EPISODES = 10000
+EPISODES = 50000
 
 DISCOUNT = 0.99
 epsilon = 1
@@ -328,6 +328,11 @@ if __name__ == '__main__':
     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=MEMORY_FRACTION)
     backend.set_session(tf.Session(config=tf.ConfigProto(gpu_options=gpu_options)))
 
+
+    # Create models folder
+    if not os.path.isdir('models'):
+        os.makedirs('models')
+        
    
 
     # Create agent and environment
@@ -406,7 +411,7 @@ if __name__ == '__main__':
 
                 # Save model, but only when min reward is greater or equal a set value
                 if min_reward >= MIN_REWARD:
-                    agent.model.save(f'Models_DGN_CNN/{MODEL_NAME}__{max_reward:_>7.2f}max_{average_reward:_>7.2f}avg_{min_reward:_>7.2f}min__{int(time.time())}.hdf5')
+                    agent.model.save(f'Models/{MODEL_NAME}__{max_reward:_>7.2f}max_{average_reward:_>7.2f}avg_{min_reward:_>7.2f}min__{int(time.time())}.hdf5')
 
             # Decay epsilon
             if epsilon > MIN_EPSILON:
@@ -418,4 +423,4 @@ if __name__ == '__main__':
     # Set termination flag for training thread and wait for it to finish
     agent.terminate = True
     trainer_thread.join()
-    agent.model.save(f'Models_DGN_CNN/{MODEL_NAME}__{max_reward:_>7.2f}max_{average_reward:_>7.2f}avg_{min_reward:_>7.2f}min__{int(time.time())}.hdf5')
+    agent.model.save(f'Models/{MODEL_NAME}__{max_reward:_>7.2f}max_{average_reward:_>7.2f}avg_{min_reward:_>7.2f}min__{int(time.time())}.hdf5')

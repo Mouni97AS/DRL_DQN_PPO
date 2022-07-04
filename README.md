@@ -48,3 +48,38 @@ sensor = world.spawn_actor(blueprint, spawn_point, attach_to=vehicle)
 # add sensor to list of actors
 actor_list.append(sensor)
 ```
+### DQN model
+I choose the model 64x3 CNN consist of 3 convolutional layer and kernel size 3x3, I didn't add more layer to avoid overfitting. In RL its difficult to train an agent with tens millions of parameters. where the 64x3 CNN gives the best performing.
+the code below describe creating the model:
+```ruby
+def create_model(self):
+        model = Sequential()
+
+        model.add(Conv2D(64, (3, 3), input_shape=(IM_HEIGHT, IM_WIDTH,3), padding='same'))
+        model.add(Activation('relu'))
+        model.add(AveragePooling2D(pool_size=(5, 5), strides=(3, 3), padding='same'))
+
+        model.add(Conv2D(64, (3, 3), padding='same'))
+        model.add(Activation('relu'))
+        model.add(AveragePooling2D(pool_size=(5, 5), strides=(3, 3), padding='same'))
+
+        model.add(Conv2D(64, (3, 3), padding='same'))
+        model.add(Activation('relu'))
+        model.add(AveragePooling2D(pool_size=(5, 5), strides=(3, 3), padding='same'))
+
+        model.add(Flatten())
+
+        model.add(Dense(3, activation="linear"))
+        model = Model(inputs=model.input, outputs=model.output)
+        model.compile(loss="mse", optimizer=Adam(lr=0.001), metrics=["accuracy"])
+		```
+		
+to run the script for training model:
+```
+#Run Carla
+CarlaUE4.exe town03 -ResX=30 -ResY=30
+```
+open another terminal
+```
+Python train.py
+```
