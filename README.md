@@ -91,3 +91,12 @@ in the folder `models/` you can find a pretrained model `FinalModel.hdf5`for 100
 ![accuracy](./results/DQN/accuracy_final.PNG)
 <br />
 ![reward average](./results/DQN/dgnreward.PNG)
+<br />
+description of the code and the steps in the process for further information. Go to page 38 of the PDF folder and read section 5.
+
+####for testing the model we run the command:
+
+```
+Python test.py
+```
+the test result [here](https://drive.google.com/drive/folders/1MB5YD3kh4UlUqWMe7fTGqTp4uAJQIK_M)
