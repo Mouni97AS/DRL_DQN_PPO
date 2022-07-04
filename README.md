@@ -7,8 +7,12 @@ The main objective of this thesis is to provide a comprehensive analysis of curr
 ## DRL deep-Q-Network in CARLA 
 
 The implementation was written in Python 3.7 and TensorFlow 1.14 with Keras 2.2.4.
-[CALRA](https://github.com/carla-simulator/carla/releases) version 0.9.4
+[CALRA](https://github.com/carla-simulator/carla/releases) version 0.9.4 town03
 The code configuration and setup Carla was done on my own PC using PyCharm the training process was carried out on a Linux which was running Ubuntu version 20.4 supported with GPU, the connection was done remotely by OpenVPN and PuTTY.
+
+the code below describe how to Spawn the car agent(client) of type tesla model3 in CARLA town3 at position 2.5 forward and 0.7 up with a RGB camera sensor to interact with the environment(server)
+   
+
 ```ruby
 IM_WIDTH = 640
 IM_HEIGHT = 480
