@@ -83,3 +83,9 @@ open another terminal
 ```
 Python train.py
 ```
+The model was train for 8 days 50000 epsiode.
+in the folder `models/` you can find a pretrained model `FinalModel.hdf5`for 10000 epsiode.
+
+### Results 
+
+![accuracy](./results/DQN/accuracy_final.PNG)
