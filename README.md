@@ -109,23 +109,18 @@ The implementation was written in Python 3.7 with TensorFlow 1.18. Install the O
 <br />
 The reasons for choosing CarRacing-v0 gym environment that it doesn’t require high GPU and high video memory, it was suitable with the low PC capability.
 <br />
-#### About CarRacing-v0 game
 
-- For random agent run in command prompt `python -u CarRacing-run_random_agent.py` or check it [here](CarRacing-run_random_agent.py)
-
-- Action Space is `Box(3, )`, which is `[Steering, gas, breaks]`
-
-### (PPO) Architecture
+### (PPO)Architecture
 
 ![Architecture](./results/PPO/Picture1.png)
+<br />
 -PPO function by collecting a batch of experiences from interacting with the environment and using those batches to update the agent policy
 -The actor model performs the task of learning what action to do under the observed state
 -The critic model receives the reward of the pervious action and evaluate the action done by the actor model by generating a numeric value `(𝐴_𝑡 )`
 
-###Results
+### Results
 ![Cumulative_reward](./results/PPO/reward.png)
 ![: Evaluation_error](./results/PPO/Eval_err.png)
 
-#### Framestack model-best result 
-
+#### Framestack model-best test
 [here](https://drive.google.com/file/d/1tFTvriW2qdVt3ORoHqJE3R7rjWErx3yd/view?usp=sharing)
