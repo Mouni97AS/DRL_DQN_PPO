@@ -84,7 +84,7 @@ open another terminal
 Python train.py
 ```
 The model was train for 8 days 50000 epsiode.<br />
-in the folder `models/` you can find a pretrained model `FinalModel.hdf5`for 10000 epsiode.
+in the folder `models/` you can find a pretrained model `FinalModel.hdf5` trained for 10000 epsiode.
 
 ### Results 
 
@@ -92,7 +92,8 @@ in the folder `models/` you can find a pretrained model `FinalModel.hdf5`for 100
 <br />
 ![reward average](./results/DQN/dgnreward.PNG)
 <br />
-description of the code and the steps in the process for further information. Go to page 38 of the PDF folder and read section 5.
+For further information, description of the code and the process steps, Go to page 38 of the PDF folder and read section 5
+
 
 #### For testing the model we run the command:
 
@@ -103,3 +104,28 @@ the test result: [Output_command](https://drive.google.com/file/d/1236lOgR6en0iU
 <br />
 [media_1](https://drive.google.com/file/d/10Pf8d4lsIToUAsdLxzxxKEu-uf150flx/view?usp=sharing)
 
+## Proximal Policy Optimization(PPO)in Driving-Like Environment
+The implementation was written in Python 3.7 with TensorFlow 1.18. Install the OpenAI gym library developed by Python [here](https://github.com/elsheikh21/car-racing-ppo/blob/master/docs/how-to-get-started.md).
+<br />
+The reasons for choosing CarRacing-v0 gym environment that it doesn’t require high GPU and high video memory, it was suitable with the low PC capability.
+<br />
+#### About CarRacing-v0 game
+
+- For random agent run in command prompt `python -u CarRacing-run_random_agent.py` or check it [here](CarRacing-run_random_agent.py)
+
+- Action Space is `Box(3, )`, which is `[Steering, gas, breaks]`
+
+### (PPO) Architecture
+
+![Architecture](./results/PPO/Picture1.png)
+-PPO function by collecting a batch of experiences from interacting with the environment and using those batches to update the agent policy
+-The actor model performs the task of learning what action to do under the observed state
+-The critic model receives the reward of the pervious action and evaluate the action done by the actor model by generating a numeric value `(𝐴_𝑡 )`
+
+###Results
+![Cumulative_reward](./results/PPO/reward.png)
+![: Evaluation_error](./results/PPO/Eval_err.png)
+
+#### Framestack model-best result 
+
+[here](https://drive.google.com/file/d/1tFTvriW2qdVt3ORoHqJE3R7rjWErx3yd/view?usp=sharing)
