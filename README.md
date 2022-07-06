@@ -114,9 +114,9 @@ The reasons for choosing CarRacing-v0 gym environment that it doesn’t require 
 
 ![Architecture](./results/PPO/Picture1.png)
 <br />
--PPO function by collecting a batch of experiences from interacting with the environment and using those batches to update the agent policy
--The actor model performs the task of learning what action to do under the observed state
--The critic model receives the reward of the pervious action and evaluate the action done by the actor model by generating a numeric value `(𝐴_𝑡 )`
+- PPO function by collecting a batch of experiences from interacting with the environment and using those batches to update the agent policy
+- The actor model performs the task of learning what action to do under the observed state
+- The critic model receives the reward of the pervious action and evaluate the action done by the actor model by generating a numeric value `(𝐴_𝑡 )`
 
 ### Results
 ![Cumulative_reward](./results/PPO/reward.png)
