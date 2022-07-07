@@ -134,6 +134,8 @@ Python FrameStack_Model.py --model_name ppo_framestack
 #Recurrent Model
 Python Recurrent_Model.py --model_name ppo_rnn
 ```
+For more understanding about the models architecture and the training process. Go to page 47 of the PDF folder and read section 6
+
 
 ### Results
 During training, the evaluation was running every 200 epochs
