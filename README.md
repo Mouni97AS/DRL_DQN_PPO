@@ -123,8 +123,9 @@ The training process was done on two models:
 - the `Frame Stack model Model` consist of 4 input frames
 - The `Recurrent model` merged the latent features space vector `ϕ_(t-1)` from the last step with the current latent features `ϕ_t`, doubled the number of parameters in our fully connected layers.
  <br />
- Command for training:
- ```
+Command for training:
+
+```
 #FrameStack Model
 Python FrameStack_Model.py --model_name ppo_framestack
 ```
@@ -135,7 +136,7 @@ Python Recurrent_Model.py --model_name ppo_rnn
 ```
 ### Results
 During training, the evaluation was running every 200 epochs
-<br />
+
 `Cumulative reward of the models over number of epochs`
 
 ![Cumulative_reward](./results/PPO/reward.png)
@@ -144,6 +145,6 @@ During training, the evaluation was running every 200 epochs
 
 ![: Evaluation_error](./results/PPO/Eval_err.png)
 <br />
-The frame-stack model achieves highest score than the recurrent model, a score of 800 on its best run[here](https://drive.google.com/file/d/1tFTvriW2qdVt3ORoHqJE3R7rjWErx3yd/view?usp=sharing).
+The frame-stack model achieves highest score than the recurrent model, a score of 800 on its best run [here](https://drive.google.com/file/d/1tFTvriW2qdVt3ORoHqJE3R7rjWErx3yd/view?usp=sharing).
 <br />
 The recurrent model has less variance in its performance measurements compared to the frame stack model.  The ability to maintain a low level of variation throughout training and testing is a highly desired characteristic, and it is a very significant characteristic when it comes to training self-driving cars
