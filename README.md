@@ -129,11 +129,12 @@ Command for training:
 #FrameStack Model
 Python FrameStack_Model.py --model_name ppo_framestack
 ```
-<br />
+
 ```
 #Recurrent Model
 Python Recurrent_Model.py --model_name ppo_rnn
 ```
+
 ### Results
 During training, the evaluation was running every 200 epochs
 
