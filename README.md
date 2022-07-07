@@ -118,9 +118,32 @@ The reasons for choosing CarRacing-v0 gym environment that it doesn’t require 
 - The actor model performs the task of learning what action to do under the observed state
 - The critic model receives the reward of the pervious action and evaluate the action done by the actor model by generating a numeric value `(𝐴_𝑡 )`
 
+### Train the models
+The training process was done on two models:
+- the `Frame Stack model Model` consist of 4 input frames
+- The `Recurrent model` merged the latent features space vector `ϕ_(t-1)` from the last step with the current latent features `ϕ_t`, doubled the number of parameters in our fully connected layers.
+ <br />
+ Command for training:
+ ```
+#FrameStack Model
+Python FrameStack_Model.py --model_name ppo_framestack
+```
+<br />
+```
+#Recurrent Model
+Python Recurrent_Model.py --model_name ppo_rnn
+```
 ### Results
-![Cumulative_reward](./results/PPO/reward.png)
-![: Evaluation_error](./results/PPO/Eval_err.png)
+During training, the evaluation was running every 200 epochs
+<br />
+`Cumulative reward of the models over number of epochs`
 
-#### Framestack model-best test
-[here](https://drive.google.com/file/d/1tFTvriW2qdVt3ORoHqJE3R7rjWErx3yd/view?usp=sharing)
+![Cumulative_reward](./results/PPO/reward.png)
+
+`Evaluation of error value for the models`
+
+![: Evaluation_error](./results/PPO/Eval_err.png)
+<br />
+The frame-stack model achieves highest score than the recurrent model, a score of 800 on its best run[here](https://drive.google.com/file/d/1tFTvriW2qdVt3ORoHqJE3R7rjWErx3yd/view?usp=sharing).
+<br />
+The recurrent model has less variance in its performance measurements compared to the frame stack model.  The ability to maintain a low level of variation throughout training and testing is a highly desired characteristic, and it is a very significant characteristic when it comes to training self-driving cars
